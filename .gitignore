@@ -27,3 +27,5 @@ out
 /.history
 /.sass-cache
 /.eslintcache
+
+.angular
