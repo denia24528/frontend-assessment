@@ -5,8 +5,8 @@ import { MatCardModule } from '@angular/material/card';
   selector: 'app-repeater',
   standalone: true,
   imports: [MatCardModule],
-  templateUrl: './repeater.html',
-  styleUrls: ['./repeater.css']
+  templateUrl: './repeater.component.html',
+  styleUrls: ['./repeater.component.css']
 })
 export class RepeaterComponent<T = unknown> {
   /**

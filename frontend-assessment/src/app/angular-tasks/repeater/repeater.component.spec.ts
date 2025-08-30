@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { RepeaterComponent } from './repeater';
+import { RepeaterComponent } from './repeater.component';
 
 describe('Repeater', () => {
   let component: RepeaterComponent;
