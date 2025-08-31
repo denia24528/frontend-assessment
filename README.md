@@ -13,7 +13,7 @@ A comprehensive solution to a frontend assessment featuring advanced JavaScript 
   - **Usage:**  
     ```js
     import { deepCopy } from 'src/js-tasks/deepCopy';
-    const copy = deepCopy(obj);
+    deepCopy(obj);
     ```
 
 - **Equivalence Check Function**
@@ -23,7 +23,7 @@ A comprehensive solution to a frontend assessment featuring advanced JavaScript 
   - **Usage:**  
     ```js
     import { checkEquivalence } from 'src/js-tasks/checkEquivalence';
-    const isEqual = checkEquivalence(a, b);
+    checkEquivalence(obj1, obj2);
     ```
 
 - **Code Execution Function**
@@ -35,7 +35,8 @@ A comprehensive solution to a frontend assessment featuring advanced JavaScript 
   - **Usage:**  
     ```js
     import { executeCode } from 'src/js-tasks/executeCode';
-    executeCode('return $math.sum(a, b)', { a: 1, b: 2 });
+    executeCode('$logger("Sum:", $math.sum(a, b))', { a: 17, b: 3 });
+    executeCode('$logger("Mul:", $math.mul(a, b))', { a: 17, b: 3 });
     ```
 
 ---
@@ -48,7 +49,9 @@ A comprehensive solution to a frontend assessment featuring advanced JavaScript 
   - Works with primitives, objects, arrays, and dates.
   - **Usage:**  
     ```html
-    <div *ngFor="let item of items | customSort:'-date,name'">{{ item }}</div>
+    <div>Sorted by name: {{ options | customSort:'name' }}</div>
+    <div>Sorted by -price: {{ options | customSort:'-price' }}</div>
+    <div>Sorted by name then -price: {{ options | customSort:['name','-price'] }}</div>
     ```
 
 - **Repeater Component**
@@ -56,7 +59,7 @@ A comprehensive solution to a frontend assessment featuring advanced JavaScript 
   - Exposes the current item as `item` in the template.
   - **Usage:**  
     ```html
-    <app-repeater [items]="list">
+    <app-repeater [option]="options">
       <ng-template let-item>
         {{ item }}
       </ng-template>
