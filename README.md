@@ -124,10 +124,10 @@ nx test
 ## Project Structure
 
 ```
-src/js-tasks/        # JavaScript utility functions (deepCopy, checkEquivalence, executeCode) and their .d.ts files
-src/angular-tasks/   # Angular pipes and components (customSort, repeater)
-src/app/showcase/    # Unified Angular Material showcase component
-src/styles.scss      # Global styles and Material theming (including dark mode)
+src/app/js-tasks/        # JavaScript utility functions (deepCopy, checkEquivalence, executeCode) and their .d.ts files
+src/app/angular-tasks/   # Angular pipes and components (customSort, repeater)
+src/app/showcase/        # Unified Angular Material showcase component
+src/styles.scss          # Global styles and Material theming (including dark mode)
 ```
 
 ---
