@@ -1,8 +1,7 @@
-
 @if (option && itemTemplate) {
-    @for (item of option; track item) {
-        <mat-card>
-            <ng-container *ngTemplateOutlet="itemTemplate; context: { $implicit: item, item: item }"></ng-container>
-        </mat-card>
-    }
+  @for (item of option; track item) {
+    <mat-card>
+      <ng-container *ngTemplateOutlet="itemTemplate; context: { $implicit: item }"></ng-container>
+    </mat-card>
+  }
 }

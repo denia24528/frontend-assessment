@@ -1,0 +1,1 @@
+export function executeCode(code: string, variables?: Record<string, unknown>): unknown;

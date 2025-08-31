@@ -1,10 +1,10 @@
+import { CommonModule, NgTemplateOutlet } from '@angular/common';
 import { Component, ContentChild, Input, TemplateRef } from '@angular/core';
 import { MatCardModule } from '@angular/material/card';
 
 @Component({
   selector: 'app-repeater',
-  standalone: true,
-  imports: [MatCardModule],
+  imports: [CommonModule, MatCardModule, NgTemplateOutlet],
   templateUrl: './repeater.component.html',
   styleUrls: ['./repeater.component.css']
 })

@@ -6,12 +6,12 @@
  * @param {*} b - The second value to compare.
  * @returns {boolean} True if the values are equivalent, false otherwise.
  */
-function checkEquivalence(a, b) {
+export function checkEquivalence(a, b) {
   // Handle primitives (string, number, boolean, bigint, symbol)
   if (typeof a !== 'object' && typeof b !== 'object') {
     return a === b;
   }
-  // Handle primitives (string, number, boolean, bigint, symbol)
+  // If both values are null or undefined, consider them equivalent
   if (a == null && b == null) return true;
   // Handle Date objects
   if (a instanceof Date && b instanceof Date)
@@ -30,7 +30,10 @@ function checkEquivalence(a, b) {
     return true;
   }
   // Handle Objects
-  if (typeof a === 'object' && typeof b === 'object') {
+  if (
+    a !== null && b !== null &&
+    typeof a === 'object' && typeof b === 'object'
+  ) {
     const keysA = Object.keys(a);
     const keysB = Object.keys(b);
     // Ignore keys where value is null/undefined
@@ -43,5 +46,3 @@ function checkEquivalence(a, b) {
 
   return false;
 }
-
-export { checkEquivalence };

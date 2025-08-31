@@ -5,7 +5,7 @@
  * @param {Object} [variables={}] - An object containing variable names and their values to be injected into the code.
  * @returns {*} The result of the executed code.
  */
-function executeCode(code, variables = {}) {
+export function executeCode(code, variables = {}) {
   const $math = {
     sum: (a, b) => a + b,
     mul: (a, b) => a * b,
@@ -18,5 +18,3 @@ function executeCode(code, variables = {}) {
   const fn = new Function(...keys, '$math', '$logger', `"use strict";\n${code}\n//# sourceURL=executed_code.js`);
   return fn(...values, $math, $logger);
 }
-
-export { executeCode };

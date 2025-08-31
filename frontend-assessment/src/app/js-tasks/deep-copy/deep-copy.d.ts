@@ -1,0 +1,1 @@
+export function deepCopy(obj: unknown): unknown;

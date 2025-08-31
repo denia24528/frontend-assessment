@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { NxWelcome } from './nx-welcome';
+import { ShowcaseComponent } from './showcase/showcase.component';
 
 @Component({
-  imports: [NxWelcome, RouterModule],
+  imports: [RouterModule, ShowcaseComponent],
   selector: 'app-root',
   templateUrl: './app.html',
   styleUrl: './app.css',

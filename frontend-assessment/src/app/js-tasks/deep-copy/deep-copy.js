@@ -5,7 +5,7 @@
  * @param {*} obj - The value to deep copy. Can be an object, array, Date, or primitive.
  * @returns {*} A deep copy of the input value.
  */
-function deepCopy(obj) {
+export function deepCopy(obj) {
   if (obj === null || typeof obj !== 'object') return obj;
   if (obj instanceof Date) return new Date(obj);
   if (Array.isArray(obj)) return obj.map(deepCopy);
@@ -17,5 +17,3 @@ function deepCopy(obj) {
   }
   return copy;
 }
-
-export { deepCopy };
