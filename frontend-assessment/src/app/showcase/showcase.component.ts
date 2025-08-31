@@ -10,20 +10,22 @@ import { executeCode } from '../js-tasks/execute-code/execute-code';
 import { CustomSortPipe } from '../angular-tasks/custom-sort/custom-sort.pipe';
 import { JsonPipe } from '@angular/common';
 import { RepeaterComponent } from '../angular-tasks/repeater/repeater.component';
+import { MatCardModule } from '@angular/material/card';
 
 @Component({
   selector: 'app-showcase',
-  standalone: true,
   imports: [
     MatToolbarModule,
     MatButtonModule,
     MatListModule,
     MatIconModule,
     MatSlideToggleModule,
+    MatCardModule,
     CustomSortPipe,
     JsonPipe,
     RepeaterComponent
   ],
+  host: { 'class': 'app-showcase' },
   templateUrl: './showcase.component.html',
   styleUrls: ['./showcase.component.css']
 })

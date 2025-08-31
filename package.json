@@ -52,6 +52,7 @@
     "jest-preset-angular": "~15.0.0",
     "jest-util": "^30.0.2",
     "prettier": "^2.6.2",
+    "sass": "^1.91.0",
     "ts-jest": "^29.4.0",
     "ts-node": "10.9.1",
     "tslib": "^2.3.0",
