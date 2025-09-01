@@ -1,0 +1,9 @@
+@if (option && itemTemplate) {
+  @for (item of option; track item) {
+    <mat-card class="repeater-item">
+      <mat-card-content>
+        <ng-container *ngTemplateOutlet="itemTemplate; context: { $implicit: item }"></ng-container>
+      </mat-card-content>
+    </mat-card>
+  }
+}

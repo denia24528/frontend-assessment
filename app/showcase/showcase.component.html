@@ -1,0 +1,95 @@
+
+<mat-toolbar color="primary">
+  <span>Frontend Assessment Showcase</span>
+  <span class="spacer"></span>
+  <mat-slide-toggle (change)="toggleDarkMode()" [checked]="darkMode()">Dark Mode</mat-slide-toggle>
+</mat-toolbar>
+
+<div class="content">
+
+  <mat-nav-list>
+    @for (item of menuItems; track item.key) {
+      <a mat-list-item
+      [class.active]="selectedTask() === item.key"
+      (click)="selectTask(item.key)"
+      (keydown.enter)="selectTask(item.key)"
+      tabindex="0">
+      {{ item.label }}
+    </a>
+  }
+  </mat-nav-list>
+
+  <!-- Deep Copy Demo -->
+  @if(selectedTask() === 'deepCopy') {
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>Deep Copy</mat-card-title>
+      </mat-card-header>
+      <mat-card-content class="card-content">
+        <pre>Original: {{ data1 | json }}</pre>
+        <pre>Copy: {{ deepCopy(data1) | json }}</pre>
+      </mat-card-content>
+    </mat-card>
+  }
+
+  <!-- Check Equivalence Demo -->
+  @if(selectedTask() === 'checkEquivalence') {
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>Check Equivalence</mat-card-title>
+      </mat-card-header>
+      <mat-card-content class="card-content">
+        <pre>data1: {{ data1 | json }}</pre>
+        <pre>data2: {{ data2 | json }}</pre>
+        <pre>data3: {{ data3 | json }}</pre>
+        <div>check(data1, data2): {{ checkEquivalence(data1, data2) }}</div>
+        <div>check(data1, data3): {{ checkEquivalence(data1, data3) }}</div>
+      </mat-card-content>
+    </mat-card>
+  }
+
+  <!-- Execute Code Demo -->
+  @if(selectedTask() === 'executeCode') {
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>Execute Code</mat-card-title>
+      </mat-card-header>
+      <mat-card-content class="card-content">
+        <div>executeCode('$logger("Sum:", $math.sum(a, b))', &#123; a: 17, b: 3 &#125;)</div>
+        <div>executeCode('$logger("Mul:", $math.mul(a, b))', &#123; a: 17, b: 3 &#125;)</div>
+        <div>Results are shown in the console.</div>
+      </mat-card-content>
+    </mat-card>
+  }
+
+  <!-- Custom Sort Demo -->
+  @if(selectedTask() === 'customSort') {
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>Custom Sort</mat-card-title>
+      </mat-card-header>
+      <mat-card-content class="card-content">
+        <div>Original: {{ options | json }}</div>
+        <div>Sorted by name: {{ options | customSort:'name' | json }}</div>
+        <div>Sorted by -price: {{ options | customSort:'-price' | json }}</div>
+        <div>Sorted by name then -price: {{ options | customSort:['name','-price'] | json }}</div>
+      </mat-card-content>
+    </mat-card>
+  }
+
+  <!-- Repeater Demo -->
+  @if(selectedTask() === 'repeater') {
+    <mat-card >
+      <mat-card-header>
+        <mat-card-title>Repeater</mat-card-title>
+      </mat-card-header>
+      <mat-card-content class="card-content">
+        <app-repeater [option]="options">
+          <ng-template let-item>
+            <div>{{ item.name + ' - ' + item.price }}</div>
+          </ng-template>
+        </app-repeater>
+      </mat-card-content>
+    </mat-card>
+  }
+</div>

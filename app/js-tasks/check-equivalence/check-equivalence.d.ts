@@ -1,0 +1,1 @@
+export function checkEquivalence(a: unknown, b: unknown): boolean;
